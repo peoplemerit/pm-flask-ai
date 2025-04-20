@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
 import pytesseract
-
+import sys  # <-- ADD THIS
 # Explicit path for Tesseract on Render
 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
