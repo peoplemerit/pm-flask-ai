@@ -2,13 +2,12 @@ services:
   - type: web
     name: pm-flask-ai
     env: python
+    plan: free
     buildCommand: ""
     startCommand: gunicorn app:app
-    plan: free
     envVars:
       - key: RENDER_PYTHON_VERSION
         value: 3.10
-
-    build:
-      packages:
-        - tesseract-ocr
+  build:
+    packages:
+      - tesseract-ocr
