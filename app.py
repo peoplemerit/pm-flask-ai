@@ -27,4 +27,5 @@ def upload_image():
         extracted_text = pytesseract.image_to_string(image)
         return jsonify({"extracted_text": extracted_text})
     except Exception as e:
+        print(f"OCR error: {e}", file=sys.stderr)  # <== log error to Render
         return jsonify({"error": str(e)}), 500
