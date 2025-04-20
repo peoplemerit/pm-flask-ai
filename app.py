@@ -1,8 +1,10 @@
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PIL import Image
 import pytesseract
+
+# Explicitly set Tesseract path for Render deployment
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS
