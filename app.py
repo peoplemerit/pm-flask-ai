@@ -1,8 +1,11 @@
+
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from PIL import Image
 import pytesseract
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS
 
 @app.route("/")
 def home():
